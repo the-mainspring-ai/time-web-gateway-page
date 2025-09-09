@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mainspring Sign In</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background: #ffffff;
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .center {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 4px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            /* min-height: 350px; */
+            padding: 40px 32px 32px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            background: #F8F9FA;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .subtitle {
+            margin-top: -4px;
+            margin-bottom: 40px;
+            font-family: inherit;
+            color: #9ca3af;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.02em;
+            opacity: 1;
+        }
+
+        .form {
+            width: 100%;
+            max-width: 320px;
+            font-family: inherit;
+            color: #000;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-bottom: 20px;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+        }
+
+        .input {
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            background: #fff;
+        }
+
+        .input:focus {
+            border-color: #374151;
+            box-shadow: 0 0 0 3px rgba(55, 65, 81, 0.1);
+        }
+
+        .button {
+            margin-top: 8px;
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            background: #455B5C;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+        }
+
+        .button:hover:not([disabled]) {
+            background: #3a4d4e;
+            transform: translateY(-1px);
+        }
+
+        .button[disabled] {
+            opacity: 0.7;
+            cursor: default;
+            transform: none;
+        }
+
+        .forgot-password {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .forgot-password a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.15s ease-in-out;
+        }
+
+        .forgot-password a:hover {
+            color: #374151;
+            text-decoration: underline;
+        }
+
+        .button .spinner {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-left: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            vertical-align: -2px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Acquisition banner (copied from index) */
+        .acq-banner {
+            background: #e6f9ff;
+            border-bottom: 1px solid #00b8ea;
+            color: #0d2835;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .acq-banner .wrap {
+            padding: 1px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="acq-banner">
+        <div class="wrap">
+            <p>We’re excited to share that <strong>InfiniTime</strong> is now part of <strong>Mainspring</strong>. The
+                product you know and trust is now called <strong>Mainspring Time</strong>.</p>
+        </div>
+    </div>
+    <div class="center">
+        <div class="card">
+            <img class="logo" src="006_MAINSPRING_TIME_BLK3.png" alt="Mainspring logo" />
+            <div class="subtitle">(formerly Infinitime)</div>
+
+            <form class="form" id="login-form" novalidate>
+                <div class="field">
+                    <label class="label" for="username">Username</label>
+                    <input class="input" type="text" id="username" name="username" autocomplete="username" required />
+                </div>
+                <div class="field" id="password-field">
+                    <label class="label" for="password">Password</label>
+                    <input class="input" type="password" id="password" name="password" autocomplete="current-password"
+                        required />
+                </div>
+                <button type="submit" class="button" id="submit-button">Sign in</button>
+            </form>
+
+            <div class="forgot-password">
+                <a href="#" id="toggle-link" onclick="toggleMode(); return false;">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var form = document.getElementById('login-form');
+            var submitButton = document.getElementById('submit-button');
+            var usernameInput = document.getElementById('username');
+            var passwordInput = document.getElementById('password');
+            var passwordField = document.getElementById('password-field');
+            var toggleLink = document.getElementById('toggle-link');
+            var isForgotMode = false;
+
+            window.toggleMode = function () {
+                isForgotMode = !isForgotMode;
+
+                if (isForgotMode) {
+                    // Switch to forgot password mode
+                    passwordField.style.display = 'none';
+                    submitButton.textContent = 'Send Reset Email';
+                    toggleLink.textContent = 'Back to Sign In';
+                    passwordInput.required = false;
+                } else {
+                    // Switch back to sign in mode
+                    passwordField.style.display = 'flex';
+                    submitButton.textContent = 'Sign in';
+                    toggleLink.textContent = 'Forgot your password?';
+                    passwordInput.required = true;
+                }
+            };
+
+            function startSubmitting() {
+                submitButton.disabled = true;
+                if (isForgotMode) {
+                    submitButton.innerHTML = 'Sending...<span class="spinner" aria-hidden="true"></span>';
+                } else {
+                    submitButton.innerHTML = 'Signing in...<span class="spinner" aria-hidden="true"></span>';
+                }
+                usernameInput.disabled = true;
+                if (!isForgotMode) {
+                    passwordInput.disabled = true;
+                }
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                if (!usernameInput.value || (!isForgotMode && !passwordInput.value)) {
+                    // simple front-end required check
+                    return;
+                }
+
+                startSubmitting();
+
+                if (isForgotMode) {
+                    // Simulate sending reset email
+                    setTimeout(function () {
+                        alert('Password reset email sent to ' + usernameInput.value);
+                        // Reset form state
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Reset Email';
+                        usernameInput.disabled = false;
+                        usernameInput.value = '';
+                    }, 800);
+                } else {
+                    // Simulate auth then redirect to loading page
+                    setTimeout(function () {
+                        window.location.href = 'ITO SSO Example.html';
+                    }, 800);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
