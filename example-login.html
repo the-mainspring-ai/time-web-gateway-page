@@ -16,10 +16,14 @@
         body {
             background: #ffffff;
             font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
         }
 
         .center {
-            min-height: 100vh;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,6 +166,22 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* Page-specific banner sizing to avoid overflow */
+        .shared-notice-banner {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .shared-notice-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px 16px;
+        }
+
+        .shared-notice-banner p {
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -264,7 +284,6 @@
                     }, 800);
                 }
             });
-        })();
     </script>
 </body>
 
