@@ -1,0 +1,36 @@
+/* Shared banner styling for Mainspring notice */
+.shared-notice-banner {
+  background: #e6f9ff !important;
+  border-bottom: 1px solid #00b8ea !important;
+  color: #0d2835 !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.shared-notice-banner .shared-notice-container {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  text-align: center !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.shared-notice-banner p {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+}
+
+.shared-notice-banner p strong {
+  font-weight: 700 !important;
+  font-size: inherit !important;
+}

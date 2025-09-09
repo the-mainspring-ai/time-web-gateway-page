@@ -127,6 +127,26 @@ body {
   font-weight: 700;
 }
 
+/* Mainspring notice banner with unique styling */
+.mainspring-notice-banner {
+  background: #e6f9ff; /* lighter, brand-accented tint */
+  border-bottom: 1px solid #00b8ea; /* brand accent for contrast */
+  color: #0d2835;
+  font-size: 28px;
+  line-height: 36px;
+}
+.mainspring-notice-banner .mainspring-notice-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+.mainspring-notice-banner p {
+  margin: 0;
+}
+.mainspring-notice-banner p strong {
+  font-weight: 700;
+}
+
 p {
   font-family: "Lato", "pangramregular", Arial, sans-serif;
   font-size: 16px;
