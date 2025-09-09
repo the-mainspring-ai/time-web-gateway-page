@@ -1,0 +1,119 @@
+.menu-primary-menu-container .main-nav > li > a.below:after {
+	content: "";
+	background:url(../img/dropmenuarrow.png) no-repeat;
+	width: 6px;
+	height: 10px;
+	top: 9px;
+	margin-left: 4px;
+	position: absolute;
+	padding-left: 5px;
+}
+
+@media (min-width:992px){
+    .main-nav >li{
+        /*  background-color: #683d2a;*/
+    }
+    .main-nav > li:hover{
+        /*  background:#009d00; */
+    }
+    .im-hiding{
+        display: block !important;
+    }
+
+    .nav-bg{
+        margin-top: 5px;
+    }
+    .main-nav{
+        float: right;
+    }
+    .main-nav > a{
+        line-height: 95px;
+
+    }
+    .main-nav a{
+        color: #000;
+        display: block;
+        padding:0px 17px;
+    }
+    .active{
+        /* background-color: #009d00 !important;*/
+    }
+    .main-nav >li{
+        float: left;
+    }
+
+    .main-nav li{
+        position:relative;
+    }
+    /*.main-nav li:last-child{
+        border-right: none;
+    }*/
+    .main-nav ul{
+        position: absolute;
+        display: none;
+        min-width: 250px;
+        box-shadow: 2px 4px 5px #595353;
+        background: #c7c6c6;
+    }
+    .main-nav li:hover > ul{
+        display: block;
+        z-index:999999;
+    }
+    .main-nav ul li{
+        border-top: 1px solid rgba(255, 255, 255, 0.66);
+        /* border-bottom: 1px solid #ccc ; */
+    }
+    .main-nav > li:hover{
+        /*background: #000; /* Old browsers */
+        color: #2377cf;
+    }
+    .main-nav  li:hover > a{
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    .main-nav  li:hover{
+        /*background: #fff; */
+
+    }
+    .main-nav ul a{
+        height: auto;
+        padding: 10px 20px;
+        color: #555;
+    }
+
+    .main-nav ul ul{
+        left: 100%;
+        top: -3%;
+    }
+
+}
+@media (min-width:992px){
+
+ul.main-nav{
+    list-style: none;
+    margin-bottom: 0px;
+}
+ul.main-nav li{
+    list-style: none;
+}	
+.main-nav a{
+    text-transform: capitalize;
+}
+.main-nav > li > a{
+    color:#555555;
+    font-size: 15px;
+    padding: 0px 20px;
+    height: auto;
+    line-height: 29px;
+}
+
+.main-nav li a img {
+    padding-top: 16px;
+}
+.main-nav li.reser:focus > ul.reservationform{
+    display: block;
+    z-index:999999;
+	}
+}
+
+
