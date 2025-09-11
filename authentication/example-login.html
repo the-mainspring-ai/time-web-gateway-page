@@ -207,12 +207,6 @@
                     <input class="input" type="password" id="password" name="password" autocomplete="current-password"
                         required />
                 </div>
-                <div class="field" id="force-change-field">
-                    <label class="label" title="Once you sign in you will be prompted to change your password.">
-                        <input type="checkbox" id="force-change" name="force-change" />
-                        Change password upon signin
-                    </label>
-                </div>
                 <button type="submit" class="button" id="submit-button">Sign in</button>
             </form>
 
@@ -229,7 +223,6 @@
             var usernameInput = document.getElementById('username');
             var passwordInput = document.getElementById('password');
             var passwordField = document.getElementById('password-field');
-            var forceChangeField = document.getElementById('force-change-field');
             var toggleLink = document.getElementById('toggle-link');
             var isForgotMode = false;
 
@@ -239,14 +232,12 @@
                 if (isForgotMode) {
                     // Switch to forgot password mode
                     passwordField.style.display = 'none';
-                    forceChangeField.style.display = 'none';
                     submitButton.textContent = 'Send Reset Email';
                     toggleLink.textContent = 'Back to Sign In';
                     passwordInput.required = false;
                 } else {
                     // Switch back to sign in mode
                     passwordField.style.display = 'flex';
-                    forceChangeField.style.display = 'flex';
                     submitButton.textContent = 'Sign in';
                     toggleLink.textContent = 'Forgot your password?';
                     passwordInput.required = true;
